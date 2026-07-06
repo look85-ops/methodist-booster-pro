@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бустер методиста PRO — инструменты для L&D</title>
+<meta name="description" content="Бустер методиста PRO: симулятор учебного дня, AI-генератор активностей, фасилитационные карты, аудит запроса, мастер видения, конструктор промптов. С поддержкой автора.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://look85-ops.github.io/methodist-booster-pro/">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+<meta property="og:title" content="Бустер методиста PRO — шесть инструментов для L&D">
+<meta property="og:description" content="Симулятор учебного дня, AI-генератор активностей, фасилитационные карты, аудит запроса заказчика, мастер видения продукта, конструктор промптов.">
+    <meta property="og:url" content="https://look85-ops.github.io/methodist-booster-pro/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Бустер методиста PRO">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Бустер методиста PRO — инструменты для L&D">
+    <meta name="twitter:description" content="Симулятор, генератор, карты, аудит, видение, промпты — шесть AI-инструментов для методиста.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+.boosty-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #FF7A00;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 8px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+}
+@media (max-width: 680px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
+}
+.pricing-card.pro {
+  border-color: var(--bg-yellow);
+  background: color-mix(in srgb, var(--bg-elev) 92%, var(--bg-yellow) 8%);
+  position: relative;
+}
+.pricing-card.pro::before {
+  content: '\0420\0435\043A\043E\043C\0435\043D\0434\0443\0435\043C';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-yellow);
+  color: var(--text);
+  padding: 2px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.pricing-card h3 { font-size: var(--fs-h3); margin: 0; }
+.pricing-card .price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.pricing-card .price small {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.pricing-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pricing-card ul li {
+  padding: 4px 0;
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+.pricing-card ul li::before {
+  content: '\2713 ';
+  color: var(--success);
+  font-weight: 700;
+}
+.pricing-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: transform var(--t) var(--ease);
+}
+.pricing-cta:hover { transform: translateY(-2px); }
+.pricing-cta.boosty {
+  background: #FF7A00;
+  color: #fff;
+}
+.pricing-cta.ghost {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.supporters {
+  margin-top: var(--s-4);
+  padding: var(--s-3);
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  text-align: center;
+}
+.pro-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--text-inverse);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Бустер методиста PRO — на главную">
+            <span class="brand-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </span>
+            <span>Бустер методиста <span class="pro-badge">PRO</span></span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+            <a href="ivanov.html">Иванов</a>
+            <a href="activities.html">Активности</a>
+            <a href="cards.html">Карты</a>
+            <a href="audit.html">Аудит</a>
+            <a href="vision.html">Видение</a>
+            <a class="boosty-badge" href="https://boosty.to/natalialnd" target="_blank" rel="noopener">\u2605 \u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>\u0411\u0443\u0441\u0442\u0435\u0440 \u0434\u043B\u044F \u0442\u0435\u0445, \u043A\u0442\u043E \u043F\u0440\u043E\u0435\u043A\u0442\u0438\u0440\u0443\u0435\u0442 \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435</h1>
+                <p class="hero-lead">
+                    \u041E\u0442 \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0430 \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A\u0430 — \u0434\u043E \u0441\u0438\u043C\u0443\u043B\u044F\u0446\u0438\u0438 \u0443\u0447\u0435\u0431\u043D\u043E\u0433\u043E \u0434\u043D\u044F \u0438 \u0441\u0431\u043E\u0440\u043A\u0438 \u0432\u0438\u0434\u0435\u043D\u0438\u044F \u043D\u043E\u0432\u043E\u0433\u043E \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430.
+                </p>
+                <p style="color: var(--text-muted); font-size: var(--fs-small)">
+                    \u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0435 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B \u0441 \u043B\u0438\u043C\u0438\u0442\u043E\u043C 3 AI-\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0438/\u0434\u0435\u043D\u044C. \u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0442\u0435 \u043F\u0440\u043E\u0435\u043A\u0442 — \u0441\u043D\u0438\u043C\u0438\u0442\u0435 \u043B\u0438\u043C\u0438\u0442.
+                </p>
+            </div>
+
+            <div class="hero-illustration" aria-hidden="true">
+    <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <circle cx="160" cy="180" r="155" fill="#FFEA6C" opacity="0.45"/>
+        <circle cx="300" cy="210" r="130" fill="#FFEA6C" opacity="0.25"/>
+        <circle cx="220" cy="300" r="110" fill="#FFEA6C" opacity="0.18"/>
+        <circle cx="90" cy="380" r="24" fill="#9CA3AF" opacity="0.35"/>
+    </svg>
+</div>
+</div>
+</section>
+
+    <section id="benefits" class="sec-y" aria-labelledby="benefits-title">
+        <div class="container">
+            <h2 id="benefits-title">\u0414\u043B\u044F \u0447\u0435\u0433\u043E \u044D\u0442\u043E \u043D\u0443\u0436\u043D\u043E</h2>
+            <p class="lead" style="margin-top: var(--s-3)">\u00AB\u0411\u0443\u0441\u0442\u0435\u0440\u00BB \u0437\u0430\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u0442\u043E\u0447\u043A\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u0438 \u043F\u043E\u043C\u043E\u0433\u0430\u0435\u0442:</p>
+            <ul style="margin-top: var(--s-4)">
+                <li>\u043F\u0435\u0440\u0435\u0432\u0435\u0441\u0442\u0438 \u0437\u0430\u043F\u0440\u043E\u0441 \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A\u0430 \u0432 \u0438\u0437\u043C\u0435\u0440\u0438\u043C\u044B\u0435 \u0443\u0447\u0435\u0431\u043D\u044B\u0435 \u0446\u0435\u043B\u0438</li>
+                <li>\u0441\u043E\u0431\u0440\u0430\u0442\u044C \u0441\u043E\u0433\u043B\u0430\u0441\u043E\u0432\u0430\u043D\u043D\u043E\u0435 \u0432\u0438\u0434\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430</li>
+                <li>\u043F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438 \u043F\u043E\u0434 \u043F\u043B\u0430\u043D\u0438\u0440\u0443\u0435\u043C\u044B\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442</li>
+                <li>\u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0441\u0446\u0435\u043D\u0430\u0440\u0438\u0439 \u0447\u0435\u0440\u0435\u0437 \u0441\u0438\u043C\u0443\u043B\u044F\u0446\u0438\u044E \u0443\u0447\u0435\u0431\u043D\u043E\u0433\u043E \u0434\u043D\u044F</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-title">
+        <div class="container">
+            <h2 id="tools-title">\u0418\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B</h2>
+            <p class="lead" style="margin-top: var(--s-3)">\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043F\u043E \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u0438\u043B\u0438 \u043C\u0438\u043A\u0443\u0439\u0442\u0435 \u043F\u043E\u0434 \u0432\u0430\u0448\u0438 \u0437\u0430\u0434\u0430\u0447\u0438.</p>
+
+            <div class="tools-grid" style="margin-top: var(--s-5)">
+                <a class="tool-card ivanov" href="ivanov.html">
+                    <span class="tool-name">\u0421\u0442\u0440\u0430\u0434\u0430\u043D\u0438\u044F \u0438\u043D\u0436\u0435\u043D\u0435\u0440\u0430 \u0418\u0432\u0430\u043D\u043E\u0432\u0430</span>
+                    <span class="tool-desc">\u0421\u0438\u043C\u0443\u043B\u044F\u0442\u043E\u0440 \u0443\u0447\u0435\u0431\u043D\u043E\u0433\u043E \u0434\u043D\u044F. \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0439 \u0441\u0446\u0435\u043D\u0430\u0440\u0438\u0439 \u043D\u0430 \u043B\u043E\u0433\u0438\u043A\u0443, \u0442\u0435\u043C\u043F \u0438 \u0432\u043E\u0432\u043B\u0435\u0447\u0451\u043D\u043D\u043E\u0441\u0442\u044C.</span>
+                    <span class="tool-cta">\u0417\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u0441\u0438\u043C\u0443\u043B\u044F\u0442\u043E\u0440 \u2192</span>
+                </a>
+
+                <a class="tool-card activities" href="activities.html">
+                    <span class="tool-name">\u0410\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438 <span class="pro-badge">AI</span></span>
+                    <span class="tool-desc">\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u0444\u043E\u0440\u043C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F \u043F\u043E\u0434 \u043A\u043E\u043D\u043A\u0440\u0435\u0442\u043D\u0443\u044E \u0443\u0447\u0435\u0431\u043D\u0443\u044E \u0437\u0430\u0434\u0430\u0447\u0443. 3 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E \u0432 \u0434\u0435\u043D\u044C.</span>
+                    <span class="tool-cta">\u0421\u0433\u0435\u043D\u0435\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u2192</span>
+                </a>
+
+                <a class="tool-card cards" href="cards.html">
+                    <span class="tool-name">\u041A\u0430\u0440\u0442\u044B</span>
+                    <span class="tool-desc">\u0424\u0430\u0441\u0438\u043B\u0438\u0442\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u0432\u043E\u043F\u0440\u043E\u0441\u044B \u0432 \u043F\u044F\u0442\u0438 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F\u0445, \u0441 \u0438\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0435\u0439 \u0432\u0435\u0434\u0443\u0449\u0435\u043C\u0443.</span>
+                    <span class="tool-cta">\u0412\u044B\u0442\u044F\u043D\u0443\u0442\u044C \u043A\u0430\u0440\u0442\u0443 \u2192</span>
+                </a>
+
+                <a class="tool-card audit" href="audit.html">
+                    <span class="tool-name">\u0410\u0443\u0434\u0438\u0442</span>
+                    <span class="tool-desc">\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u0437\u0430\u043F\u0440\u043E\u0441\u0430 \u0437\u0430\u043A\u0430\u0437\u0447\u0438\u043A\u0430. \u0413\u043E\u0442\u043E\u0432\u044B\u0439 \u0431\u0440\u0438\u0444 \u0434\u043B\u044F \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u0430.</span>
+                    <span class="tool-cta">\u041F\u0440\u043E\u0439\u0442\u0438 \u0430\u0443\u0434\u0438\u0442 \u2192</span>
+                </a>
+
+                <a class="tool-card vision" href="vision.html">
+                    <span class="tool-name">\u0412\u0438\u0434\u0435\u043D\u0438\u0435</span>
+                    <span class="tool-desc">\u041C\u0430\u0441\u0442\u0435\u0440 \u0432\u0438\u0434\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430 \u043F\u043E Lean / JTBD. \u041E\u0442 \u0431\u043E\u043B\u0438 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F — \u043A MVP.</span>
+                    <span class="tool-cta">\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0432\u0438\u0434\u0435\u043D\u0438\u0435 \u2192</span>
+                </a>
+
+                <a class="tool-card" href="prompts.html">
+                    <span class="tool-name">AI-\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B</span>
+                    <span class="tool-desc">\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440 \u043F\u0440\u043E\u043C\u043F\u0442\u043E\u0432 \u0438 \u0441\u043E\u0432\u0435\u0442\u044B \u043F\u043E \u0440\u0430\u0431\u043E\u0442\u0435 \u0441 AI.</span>
+                    <span class="tool-cta">\u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440 \u2192</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-y" aria-labelledby="pricing-title">
+      <div class="container">
+        <h2 id="pricing-title">\u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u043F\u0440\u043E\u0435\u043A\u0442</h2>
+        <p class="lead" style="margin-top: var(--s-3)">
+          \u0418\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B \u0434\u043B\u044F \u0432\u0441\u0435\u0445. AI-\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F — 3 \u0440\u0430\u0437\u0430 \u0432 \u0434\u0435\u043D\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E.
+          \u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0442\u0435 \u043F\u0440\u043E\u0435\u043A\u0442 \u043D\u0430 Boosty — \u0441\u043D\u0438\u043C\u0438\u0442\u0435 \u043B\u0438\u043C\u0438\u0442 \u0438 \u043F\u043E\u043C\u043E\u0433\u0438\u0442\u0435 \u0435\u043C\u0443 \u0440\u0430\u0441\u0442\u0438.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E</h3>
+            <div class="price">0 <small>\u20BD</small></div>
+            <ul>
+              <li>\u0412\u0441\u0435 6 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432</li>
+              <li>3 AI-\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0438 \u0432 \u0434\u0435\u043D\u044C</li>
+              <li>\u0421\u0438\u043C\u0443\u043B\u044F\u0442\u043E\u0440 \u0418\u0432\u0430\u043D\u043E\u0432\u0430</li>
+              <li>\u0424\u0430\u0441\u0438\u043B\u0438\u0442\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u044B</li>
+            </ul>
+            <div style="flex:1"></div>
+            <a class="pricing-cta ghost" href="activities.html">\u041D\u0430\u0447\u0430\u0442\u044C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E</a>
+          </div>
+
+          <div class="pricing-card pro">
+            <h3>\u0421\u0442\u043E\u0440\u043E\u043D\u043D\u0438\u043A</h3>
+            <div class="price">390 <small>\u20BD/\u043C\u0435\u0441</small></div>
+            <ul>
+              <li>\u0412\u0441\u0451 \u0438\u0437 \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E\u0439 \u0432\u0435\u0440\u0441\u0438\u0438</li>
+              <li>\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u044B\u0439 AI-\u0434\u043E\u0441\u0442\u0443\u043F</li>
+              <li>\u041F\u0440\u0438\u043E\u0440\u0438\u0442\u0435\u0442\u043D\u044B\u0435 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F</li>
+              <li>\u0418\u043C\u044F \u0432 \u0441\u043F\u0438\u0441\u043A\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0438\u043A\u043E\u0432</li>
+            </ul>
+            <a class="pricing-cta boosty" href="https://boosty.to/natalialnd" target="_blank" rel="noopener">\u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u043D\u0430 Boosty</a>
+          </div>
+        </div>
+
+        <div class="supporters" id="supporters-list">
+          <p>\u041F\u0440\u043E\u0435\u043A\u0442 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0435 \u0447\u0438\u0442\u0430\u0442\u0435\u043B\u0435\u0439. \u0421\u043F\u0430\u0441\u0438\u0431\u043E!</p>
+        </div>
+      </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-row">
+        <small>\u00A9 \u041D\u0430\u0442\u0430\u043B\u044C\u044F \u041C\u0430\u0440\u0446\u0435\u043D\u044E\u043A, 2026 \u00B7 \u0411\u0443\u0441\u0442\u0435\u0440 \u043C\u0435\u0442\u043E\u0434\u0438\u0441\u0442\u0430 PRO \u00B7 \u0421\u0434\u0435\u043B\u0430\u043D\u043E \u0432 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u0447\u0435\u0441\u0442\u0432\u0435 \u0441 AI</small>
+        <a href="https://boosty.to/natalialnd" target="_blank" rel="noopener" class="footer-links" style="color:var(--text-inverse);display:inline-flex;align-items:center;gap:6px">\u2605 \u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u043D\u0430 Boosty</a>
+    </div>
+</footer>
+
+<script src="js/boosty.js"></script>
+<script>
+document.getElementById('hamburgerBtn')?.addEventListener('click', function() {
+    const nav = document.getElementById('navLinks');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    nav.classList.toggle('open');
+    this.setAttribute('aria-expanded', !expanded);
+});
+
+(function() {
+  if (window.BOOSTY) {
+    const remaining = BOOSTY.getRemaining();
+    const badge = document.querySelector('.hero-lead + p');
+    if (badge && remaining !== Infinity) {
+      badge.textContent = '\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E: \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C ' + remaining + ' ' + BOOSTY.pluralize(remaining, '\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F', '\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0438', '\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0439') + ' AI \u0441\u0435\u0433\u043E\u0434\u043D\u044F';
+    }
+  }
+})();
+</script>
+</body>
+</html>
