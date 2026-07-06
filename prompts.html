@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Промпты для методиста — Бустер методиста PRO</title>
+  <meta name="description" content="Конструктор промптов и советы по работе с AI.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+</head>
+<body class="tool-page">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Бустер методиста PRO — на главную">
+        <span class="brand-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Бустер методиста <span class="pro-badge">PRO</span></span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+        <a href="index.html">Главная</a>
+        <a href="ivanov.html">Иванов</a>
+        <a href="activities.html">Активности</a>
+        <a href="cards.html">Карты</a>
+        <a href="audit.html">Аудит</a>
+        <a href="vision.html">Видение</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb"><a href="index.html">← Главная</a><span class="sep">/</span><span>Промпты</span></div>
+    <h1>Промпты для методиста</h1>
+    <p style="margin-top: var(--s-3)"><a href="ai-tools.html" style="display:inline-block;background:var(--bg-yellow);color:var(--text);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid var(--text)">Каталог AI-сервисов → AI-инструменты</a></p>
+
+    <section aria-labelledby="tips-title" style="margin-top: var(--s-4)">
+      <h2 id="tips-title">Советы по работе с AI</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:var(--s-2);margin-top:var(--s-2)">
+        <div style="padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius)">
+          <h3>Формула РЗКФ</h3>
+          <p style="font-size:13px;margin:0">Роль + Задача + Контекст + Формат — каркас любого промпта.</p>
+          <dl style="font-size:13px">
+            <dt><strong>Роль</strong></dt><dd>например: senior learning analyst</dd>
+            <dt><strong>Задача</strong></dt><dd>один глагол: проанализируй, сформулируй, разработай</dd>
+            <dt><strong>Контекст</strong></dt><dd>ЦА, формат, ограничения (без личных данных)</dd>
+            <dt><strong>Формат</strong></dt><dd>таблица, чек-лист, 3 абзаца, JSON</dd>
+          </dl>
+        </div>
+        <div style="padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius)">
+          <h3>Приватность и гигиена</h3>
+          <ul style="font-size:13px">
+            <li>Не вставляйте ФИО, телефоны, email — заменяйте на роли</li>
+            <li>Не указывайте название компании, подразделения</li>
+            <li>Не загружайте файлы — копируйте фрагменты текста</li>
+            <li>Чистите историю чата после работы</li>
+          </ul>
+        </div>
+        <div style="padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius)">
+          <h3>Температура — насколько креативно отвечает AI</h3>
+          <p style="font-size:13px;margin:0 0 var(--s-2);color:var(--text-muted)">Параметр от 0 до 1. Чем ниже — тем строже ответ.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:12px">
+            <div style="padding:10px;border:1px solid var(--border);border-radius:8px"><strong>0.0–0.3</strong>Чек-листы, регламенты, факты</div>
+            <div style="padding:10px;border:1px solid var(--border);border-radius:8px"><strong>0.4–0.7</strong>Сценарии, кейсы, структура</div>
+            <div style="padding:10px;border:1px solid var(--border);border-radius:8px"><strong>0.8–1.0</strong>Метафоры, нейминг, идеи</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--bg-yellow);padding:var(--s-4) 0;margin:0 calc(50% - 50vw);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%)">
+      <div style="max-width:var(--container);margin:0 auto;padding:0 var(--s-4)">
+        <h2>Конструктор промптов</h2>
+        <p style="font-size:13px;color:var(--text-muted)">Собирает промпт по формуле РЗКФ.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-4);margin-top:var(--s-3)">
+          <div style="padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elev)">
+            <h3>Параметры</h3>
+            <label style="display:block;margin-bottom:var(--s-2)">Задача
+              <select id="task" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px">
+                <option value="audience">Анализ ЦА</option>
+                <option value="goals">Постановка учебных целей</option>
+                <option value="structure">Структура курса/модуля</option>
+                <option value="objections">Работа с возражениями</option>
+                <option value="interview">Интервью с экспертом</option>
+              </select>
+            </label>
+            <label style="display:block;margin-bottom:var(--s-2)">Температура
+              <select id="temperature" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px">
+                <option value="0.3">0.0–0.3 · строго</option>
+                <option value="0.5" selected>0.4–0.7 · средне</option>
+                <option value="0.8">0.8–1.0 · креативно</option>
+              </select>
+            </label>
+            <label style="display:block;margin-bottom:var(--s-2)">Аудитория
+              <input id="aud" type="text" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px" placeholder="Например: сотрудники продаж">
+            </label>
+            <label style="display:block;margin-bottom:var(--s-2)">Контекст
+              <textarea id="ctx" rows="5" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px" placeholder="Тема, цель, ограничения"></textarea>
+            </label>
+            <div style="display:flex;gap:8px">
+              <button style="padding:8px 14px;background:var(--accent);color:var(--text-inverse);border:none;border-radius:10px;font-weight:600;cursor:pointer" id="buildBtn">Собрать промпт</button>
+              <button style="padding:8px 14px;background:transparent;border:1px solid var(--border);border-radius:10px;cursor:pointer" id="copyBtn">Скопировать</button>
+              <button style="padding:8px 14px;background:transparent;border:1px solid var(--border);border-radius:10px;cursor:pointer" id="clearBtn">Очистить</button>
+            </div>
+          </div>
+          <div style="padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elev)">
+            <h3>Готовый промпт</h3>
+            <textarea id="result" style="width:100%;min-height:280px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px;white-space:pre-wrap" placeholder="Здесь появится собранный промпт"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <small>© Наталья Марценюк, 2026 · Бустер методиста PRO</small>
+      <a href="https://boosty.to/natalialnd" target="_blank" rel="noopener" class="footer-links" style="color:var(--text-inverse)">★ Поддержать на Boosty</a>
+    </div>
+  </footer>
+
+  <script>
+  const ROLE = 'Роль: ты — senior learning analyst и performance consultant.';
+  const TEMPLATES = {
+    audience: 'Задача: проанализируй целевую аудиторию учебного курса.\nФормат: таблица «Характеристика → Влияние на дизайн → Рекомендация».',
+    goals: 'Задача: сформулируй учебные цели по таксономии Блума.\nФормат: одна ключевая цель + 2–3 вспомогательные.',
+    structure: 'Задача: разработай структуру учебного модуля.\nФормат: название, цель, формат, хронометраж.',
+    objections: 'Задача: проработай типичные возражения.\nФормат: возражение → где в курсе → как отработать.',
+    interview: 'Задача: подготовь интервью с экспертом.\nФормат: Gap map, вопросы, повестка.'
+  };
+  function buildPrompt(){
+    const task = document.getElementById('task').value;
+    const aud = document.getElementById('aud').value?.trim();
+    const ctx = document.getElementById('ctx').value?.trim();
+    const temp = document.getElementById('temperature').value;
+    let out = ROLE + '\n' + (TEMPLATES[task] || '');
+    if (aud) out += '\nАудитория: ' + aud + '.';
+    if (ctx) out += '\nКонтекст: ' + ctx + '.';
+    out += '\nТемпература: ' + temp + '.';
+    document.getElementById('result').value = out;
+  }
+  document.getElementById('buildBtn')?.addEventListener('click', buildPrompt);
+  document.getElementById('clearBtn')?.addEventListener('click', function(){
+    document.getElementById('aud').value = ''; document.getElementById('ctx').value = ''; document.getElementById('result').value = '';
+  });
+  document.getElementById('copyBtn')?.addEventListener('click', async function(){
+    const txt = document.getElementById('result').value;
+    try { await navigator.clipboard.writeText(txt); this.textContent = 'Скопировано'; setTimeout(() => this.textContent = 'Скопировать', 1200); } catch {}
+  });
+  document.getElementById('hamburgerBtn')?.addEventListener('click', function(){
+    const nav = document.getElementById('navLinks');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', (!expanded).toString());
+    nav.classList.toggle('open');
+  });
+  </script>
+</body>
+</html>
