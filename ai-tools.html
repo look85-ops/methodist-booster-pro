@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-инструменты для методиста — Бустер методиста PRO</title>
+  <meta name="description" content="Подборка AI-сервисов для методиста.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+</head>
+<body class="tool-page">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Бустер методиста PRO — на главную">
+        <span class="brand-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Бустер методиста <span class="pro-badge">PRO</span></span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+        <a href="index.html">Главная</a>
+        <a href="ivanov.html">Иванов</a>
+        <a href="activities.html">Активности</a>
+        <a href="cards.html">Карты</a>
+        <a href="audit.html">Аудит</a>
+        <a href="vision.html">Видение</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb"><a href="index.html">← Главная</a><span class="sep">/</span><span>AI-инструменты</span></div>
+    <h1>AI-инструменты для методиста</h1>
+    <p style="margin-top:var(--s-3);color:var(--text-muted)">Подборка AI-сервисов, которые ускоряют работу методиста.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--s-4);margin-top:var(--s-4)">
+      <div class="wizard-step"><h3>ChatGPT (OpenAI)</h3><p style="font-size:13px">Универсальный AI. Хорош для текстов, сценариев, анализа.</p></div>
+      <div class="wizard-step"><h3>YandexGPT</h3><p style="font-size:13px">Российский AI. Подходит для работы с русскоязычными текстами.</p></div>
+      <div class="wizard-step"><h3>GigaChat (Сбер)</h3><p style="font-size:13px">Российский AI. Интеграция с экосистемой Сбера.</p></div>
+      <div class="wizard-step"><h3>Perplexity</h3><p style="font-size:13px">Поисковый AI с источниками. Для исследований и факт-чекинга.</p></div>
+      <div class="wizard-step"><h3>Claude (Anthropic)</h3><p style="font-size:13px">Сильный в анализе документов и длинных текстов.</p></div>
+      <div class="wizard-step"><h3>Gamma.app</h3><p style="font-size:13px">AI-генерация презентаций по промпту.</p></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <small>© Наталья Марценюк, 2026 · Бустер методиста PRO</small>
+      <a href="https://boosty.to/natalialnd" target="_blank" rel="noopener" class="footer-links" style="color:var(--text-inverse)">★ Поддержать на Boosty</a>
+    </div>
+  </footer>
+
+  <script>
+  document.getElementById('hamburgerBtn')?.addEventListener('click', function(){
+    const nav = document.getElementById('navLinks');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', (!expanded).toString());
+    nav.classList.toggle('open');
+  });
+  </script>
+</body>
+</html>
