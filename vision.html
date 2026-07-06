@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видение — Бустер методиста PRO</title>
+    <meta name="description" content="Vision-мастер: от боли пользователя к MVP с критериями успеха за 7 шагов.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/pages.css">
+</head>
+<body class="tool-page vision">
+
+<header class="site-header">
+    <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Бустер методиста PRO — на главную">
+            <span class="brand-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Бустер методиста <span class="pro-badge">PRO</span></span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+            <a href="index.html">Главная</a>
+            <a href="ivanov.html">Иванов</a>
+            <a href="activities.html">Активности</a>
+            <a href="cards.html">Карты</a>
+            <a href="audit.html">Аудит</a>
+            <a href="prompts.html">AI-инструменты</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="breadcrumb"><a href="index.html">← Главная</a><span class="sep">/</span><span>Видение</span></div>
+    <div class="tool-intro">
+        <span class="tool-mark" aria-hidden="true"></span>
+        <h1>Видение</h1>
+        <div class="tool-info">
+            <div><strong>Зачем:</strong> Собрать проверяемое видение продукта — от боли пользователя к MVP.</div>
+            <div><strong>Как пользоваться:</strong> 7 шагов в логике Lean / JTBD. На выходе — бриф + методическое зеркало + направления решения.</div>
+        </div>
+    </div>
+
+    <section class="tool-canvas">
+        <div class="wizard-step" id="step1">
+            <h3>1. Какую боль решаем?</h3>
+            <p>Опишите конкретную ситуацию, в которой кому-то сейчас плохо или неудобно. 2–3 предложения.</p>
+            <div class="step-zachem">Зачем: без конкретной боли продукт превращается в «фичу ради фичи».</div>
+            <textarea id="vision1" rows="3" placeholder="Например: новые сотрудники тратят 6 недель на адаптацию, постоянно отвлекают коллег..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(1)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step2" style="display:none">
+            <h3>2. Кто страдает и кто платит?</h3>
+            <p>Опишите пользователя и заказчика.</p>
+            <div class="step-zachem">Зачем: пользователь и заказчик часто разные люди.</div>
+            <textarea id="vision2" rows="3" placeholder="Пользователь — новый сотрудник отдела продаж. Платит — руководитель отдела..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(2)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step3" style="display:none">
+            <h3>3. Что человек пытается сделать?</h3>
+            <p>Job-to-be-done: «Когда [ситуация], я хочу [действие], чтобы [результат]».</p>
+            <div class="step-zachem">Зачем: люди нанимают продукт для конкретной работы.</div>
+            <textarea id="vision3" rows="3" placeholder="Когда я только вышел на работу, я хочу быстро понять, что и как делать..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(3)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step4" style="display:none">
+            <h3>4. Чем люди пользуются сейчас?</h3>
+            <p>Альтернативы: конкуренты, костыли, обходные пути.</p>
+            <div class="step-zachem">Зачем: если альтернатив нет — проблема может быть неострой.</div>
+            <textarea id="vision4" rows="3" placeholder="Сейчас новички спрашивают коллег, читают Confluence..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(4)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step5" style="display:none">
+            <h3>5. Какое решение и как им пользуются?</h3>
+            <p>Опишите продукт и 2–3 ключевых сценария.</p>
+            <div class="step-zachem">Зачем: сценарии показывают, как решение встраивается в жизнь.</div>
+            <textarea id="vision5" rows="3" placeholder="Онбординг-программа на 4 недели. Сценарий 1: чек-лист первых 3 дней..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(5)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step6" style="display:none">
+            <h3>6. Что в MVP, а что — нет?</h3>
+            <p>Минимум для проверки гипотезы. Что точно не входит.</p>
+            <div class="step-zachem">Зачем: список «что НЕ входит» важнее списка «что входит».</div>
+            <textarea id="vision6" rows="3" placeholder="Входит: чек-лист, 4 задания, шаблон 1:1. Не входит: мобильное приложение, геймификация..."></textarea>
+            <button class="wizard-btn" onclick="nextStep(6)">Далее →</button>
+        </div>
+        <div class="wizard-step" id="step7" style="display:none">
+            <h3>7. Как поймём, что сработало?</h3>
+            <p>Измеримый критерий успеха со сроком.</p>
+            <div class="step-zachem">Зачем: видение без метрики = «я постарался».</div>
+            <textarea id="vision7" rows="3" placeholder="К концу 4-й недели 80% новичков выходят на 70% плана..."></textarea>
+            <button class="wizard-btn" onclick="finishVision()">🎯 Собрать видение</button>
+        </div>
+        <div id="visionResult" style="display:none"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-row">
+        <small>© Наталья Марценюк, 2026 · Бустер методиста PRO</small>
+        <a href="https://boosty.to/natalialnd" target="_blank" rel="noopener" class="footer-links" style="color:var(--text-inverse)">★ Поддержать на Boosty</a>
+    </div>
+</footer>
+
+<script src="js/vision.js"></script>
+<script>
+document.getElementById('hamburgerBtn')?.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+});
+</script>
+</body>
+</html>
